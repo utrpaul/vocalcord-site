@@ -3,18 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Vocalcord — Let your phone let one out</title>
-<meta name="description" content="Turn your iPhone's charging sound into a meme. 43 hand-crafted sounds, 30-second setup via iOS Shortcuts. Pay once, laugh forever.">
+<title>Vocalcord — Custom iPhone Charging Sounds</title>
+<meta name="description" content="Replace your iPhone's boring charging chime with 85+ hilarious sounds. Farts, memes, animals, movie clips & more. 15-second setup. Pay once, own forever.">
 <meta name="theme-color" content="#fa5738">
-<meta property="og:title" content="Vocalcord — Let your phone let one out">
-<meta property="og:description" content="Turn your iPhone's charging sound into a meme. 43 hand-crafted sounds. Pay once, laugh forever.">
+<meta property="og:title" content="Vocalcord — Custom iPhone Charging Sounds">
+<meta property="og:description" content="85+ custom charging sounds for iPhone. Farts, memes, animals & more. 15-second setup. Pay once, own forever.">
 <meta property="og:url" content="https://vocalcord.app">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="/icon.png" type="image/png">
 <link rel="apple-touch-icon" href="/icon.png">
 <style>
-:root{--coral:#fa5738;--coral-dark:#d24123;--emerald:#2ec862;--ink:#14100c;--ink-soft:#3a3530;--sand:#f5f0e9;--sand-dark:#ebe3d7;--white:#fff;--muted:#8a827a;--shadow:0 2px 24px rgba(20,16,12,.08);--radius:14px;--radius-lg:20px;--font-stack:-apple-system,BlinkMacSystemFont,"SF Pro Rounded","Avenir Next","Helvetica Neue",Arial,sans-serif;--font-rounded:"SF Pro Rounded",-apple-system,BlinkMacSystemFont,"Avenir Next Rounded","Nunito","Helvetica Neue",Arial,sans-serif}
+:root{--coral:#fa5738;--coral-dark:#d24123;--coral-glow:rgba(250,87,56,.15);--emerald:#2ec862;--ink:#14100c;--ink-soft:#3a3530;--sand:#f5f0e9;--sand-dark:#ebe3d7;--white:#fff;--muted:#8a827a;--shadow:0 2px 24px rgba(20,16,12,.08);--radius:14px;--radius-lg:20px;--font-stack:-apple-system,BlinkMacSystemFont,"SF Pro Rounded","Avenir Next","Helvetica Neue",Arial,sans-serif;--font-rounded:"SF Pro Rounded",-apple-system,BlinkMacSystemFont,"Avenir Next Rounded","Nunito","Helvetica Neue",Arial,sans-serif}
 *{box-sizing:border-box;margin:0;padding:0}
 html{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;scroll-behavior:smooth}
 body{font-family:var(--font-stack);color:var(--ink);background:var(--sand);line-height:1.55;font-size:17px}
@@ -28,19 +28,74 @@ a:hover{color:var(--coral-dark)}
 .nav-links{display:flex;gap:24px;font-size:15px}
 .nav-links a{color:var(--ink-soft);font-weight:500}
 .nav-links a:hover{color:var(--coral)}
-.hero{padding:80px 0 60px;text-align:center}
+
+/* Hero */
+.hero{padding:80px 0 48px;text-align:center}
 .hero h1{font-family:var(--font-rounded);font-size:clamp(40px,8vw,72px);font-weight:900;line-height:1;letter-spacing:-.03em;margin-bottom:20px}
-.hero .subtitle{font-size:clamp(17px,2.5vw,20px);color:var(--ink-soft);max-width:520px;margin:0 auto 36px;font-weight:500}
+.hero .subtitle{font-size:clamp(17px,2.5vw,21px);color:var(--ink-soft);max-width:540px;margin:0 auto 16px;font-weight:500}
+.hero .proof{font-size:15px;color:var(--muted);margin-bottom:36px}
 .cta{display:inline-flex;align-items:center;gap:10px;background:var(--coral);color:var(--white);padding:16px 32px;border-radius:999px;font-weight:800;font-size:17px;font-family:var(--font-rounded);box-shadow:0 4px 16px rgba(250,87,56,.3);transition:transform .15s ease,box-shadow .15s ease}
 .cta:hover{background:var(--coral-dark);color:var(--white);transform:translateY(-1px);box-shadow:0 6px 20px rgba(250,87,56,.4)}
-.features{padding:60px 0}
-.features h2{font-family:var(--font-rounded);font-size:32px;font-weight:900;text-align:center;margin-bottom:40px;letter-spacing:-.02em}
-.feature-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+.store-badge{height:64px;transition:transform .15s ease;border-radius:12px}
+.store-badge:hover{transform:translateY(-2px)}
+@media (prefers-color-scheme:dark){.store-badge{filter:invert(1)}}
+
+/* Problem → Solution */
+.problem{padding:48px 0 0;text-align:center}
+.problem p{font-size:clamp(18px,2.5vw,22px);color:var(--ink-soft);max-width:560px;margin:0 auto;font-weight:500;line-height:1.5}
+.problem .highlight{color:var(--ink);font-weight:800}
+
+/* Value Stack */
+.value{padding:56px 0}
+.value h2{font-family:var(--font-rounded);font-size:clamp(28px,5vw,36px);font-weight:900;text-align:center;margin-bottom:12px;letter-spacing:-.02em}
+.value .value-sub{text-align:center;color:var(--muted);font-size:16px;margin-bottom:36px}
+.value-stack{display:flex;flex-direction:column;gap:12px;max-width:560px;margin:0 auto}
+.value-row{display:flex;align-items:center;background:var(--white);border-radius:var(--radius);padding:18px 20px;box-shadow:var(--shadow)}
+.value-row .v-emoji{font-size:28px;flex-shrink:0;width:40px}
+.value-row .v-text{flex:1}
+.value-row .v-text h3{font-family:var(--font-rounded);font-size:17px;font-weight:800;margin-bottom:2px}
+.value-row .v-text p{font-size:14px;color:var(--muted);margin:0}
+.value-row .v-price{font-family:var(--font-rounded);font-weight:800;color:var(--muted);font-size:15px;text-decoration:line-through;flex-shrink:0;margin-left:12px}
+.value-row-hero{border-left:3px solid var(--coral)}
+.value-total{text-align:center;padding:24px 0 0}
+.value-total .total-line{font-size:18px;color:var(--muted);font-weight:600;text-decoration:line-through}
+.pricing-tiers{display:flex;justify-content:center;gap:14px;margin-top:20px}
+.tier{background:var(--white);border-radius:var(--radius);padding:20px 18px;text-align:center;box-shadow:var(--shadow);flex:1;max-width:180px}
+.tier-main{border:2px solid var(--coral);position:relative}
+.tier-main .tier-price{color:var(--coral)}
+.tier-muted{opacity:.7}
+.tier-price{font-family:var(--font-rounded);font-size:24px;font-weight:900;margin-bottom:2px}
+.tier-main .tier-price{font-size:28px}
+.tier-unit{font-size:15px;font-weight:600}
+.tier-label{font-family:var(--font-rounded);font-weight:800;font-size:14px;text-transform:uppercase;letter-spacing:.04em;margin-bottom:2px}
+.tier-detail{font-size:13px;color:var(--muted)}
+
+/* How It Works */
+.how{padding:48px 0}
+.how h2{font-family:var(--font-rounded);font-size:clamp(28px,5vw,36px);font-weight:900;text-align:center;margin-bottom:36px;letter-spacing:-.02em}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;counter-reset:step}
+.step{background:var(--white);border-radius:var(--radius);padding:28px 20px;box-shadow:var(--shadow);text-align:center;counter-increment:step;position:relative}
+.step::before{content:counter(step);display:block;font-family:var(--font-rounded);font-weight:900;font-size:32px;color:var(--coral);margin-bottom:8px}
+.step h3{font-family:var(--font-rounded);font-size:17px;font-weight:800;margin-bottom:6px}
+.step p{font-size:14px;color:var(--ink-soft)}
+
+/* Features Grid */
+.features{padding:48px 0}
+.features h2{font-family:var(--font-rounded);font-size:clamp(28px,5vw,36px);font-weight:900;text-align:center;margin-bottom:36px;letter-spacing:-.02em}
+.feature-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
 .feature{background:var(--white);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow)}
 .feature-emoji{font-size:32px;margin-bottom:10px}
-.feature h3{font-family:var(--font-rounded);font-size:18px;font-weight:800;margin-bottom:6px}
+.feature h3{font-family:var(--font-rounded);font-size:17px;font-weight:800;margin-bottom:6px}
 .feature p{font-size:15px;color:var(--ink-soft)}
-.footer{padding:60px 0 40px;text-align:center;color:var(--muted);font-size:14px;border-top:1px solid var(--sand-dark);margin-top:60px}
+
+/* Final CTA */
+.final-cta{padding:56px 0;text-align:center}
+.final-cta h2{font-family:var(--font-rounded);font-size:clamp(28px,5vw,36px);font-weight:900;margin-bottom:12px;letter-spacing:-.02em;line-height:1.1}
+.final-cta p{color:var(--ink-soft);margin-bottom:28px;font-size:17px}
+.guarantee{margin-top:20px;font-size:15px;color:var(--ink-soft);font-weight:500}
+
+/* Footer */
+.footer{padding:60px 0 40px;text-align:center;color:var(--muted);font-size:14px;border-top:1px solid var(--sand-dark);margin-top:40px}
 .footer-links{display:flex;justify-content:center;gap:24px;margin-bottom:16px;flex-wrap:wrap}
 .footer-links a{color:var(--ink-soft);font-weight:500}
 .footer-links a:hover{color:var(--coral)}
@@ -55,8 +110,9 @@ a:hover{color:var(--coral-dark)}
 .page strong{color:var(--ink)}
 .contact-card{background:var(--white);border-radius:var(--radius-lg);padding:32px;box-shadow:var(--shadow);text-align:center;margin:30px 0}
 .contact-card .email{font-size:22px;font-weight:800;font-family:var(--font-rounded);color:var(--coral);word-break:break-all}
-@media (prefers-color-scheme:dark){:root{--coral:#ff6a4d;--coral-dark:#fa5738;--ink:#f5f0e9;--ink-soft:#d8cfc3;--sand:#14100c;--sand-dark:#1f1a16;--white:#1f1a16;--muted:#8a827a;--shadow:0 2px 24px rgba(0,0,0,.4)}}
-@media (max-width:560px){.nav-links{gap:16px;font-size:14px}.hero{padding:60px 0 40px}.feature-grid{grid-template-columns:1fr}}
+
+@media (prefers-color-scheme:dark){:root{--coral:#ff6a4d;--coral-dark:#fa5738;--coral-glow:rgba(255,106,77,.12);--ink:#f5f0e9;--ink-soft:#d8cfc3;--sand:#14100c;--sand-dark:#1f1a16;--white:#1f1a16;--muted:#8a827a;--shadow:0 2px 24px rgba(0,0,0,.4)}}
+@media (max-width:560px){.nav-links{gap:16px;font-size:14px}.hero{padding:60px 0 36px}.steps{grid-template-columns:1fr}.feature-grid{grid-template-columns:1fr}.pricing-tiers{flex-direction:row;gap:10px}.tier{padding:16px 12px}.tier-price{font-size:20px}.tier-main .tier-price{font-size:24px}}
 </style>
 </head>
 <body>
@@ -72,50 +128,179 @@ a:hover{color:var(--coral-dark)}
   </div>
 </nav>
 
+<!-- HERO: Dream Outcome -->
 <section class="hero">
   <div class="container">
     <h1>Let your phone<br>let one out.</h1>
-    <p class="subtitle">Turn your iPhone's charging chime into a fart, an airhorn, or a "sheeeesh". 43 hand-crafted sounds. 30-second setup via iOS Shortcuts.</p>
-    <a class="cta" href="#download">Get it on the App Store →</a>
+    <p class="subtitle">Replace your iPhone's boring charging chime with farts, memes, airhorns, movie clips &mdash; or import your own. 85+ sounds. Ready in 15 seconds.</p>
+    <p class="proof">10 categories &middot; New sounds added monthly &middot; No ads &middot; No subscriptions required</p>
+    <a href="https://apps.apple.com/app/id6761666897"><img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83" alt="Download on the App Store" class="store-badge"></a>
   </div>
 </section>
 
-<section class="features" id="features">
+<!-- PROBLEM: Agitate -->
+<section class="problem">
   <div class="container">
-    <h2>Every plug-in deserves a punchline</h2>
-    <div class="feature-grid">
-      <div class="feature">
-        <div class="feature-emoji">🎵</div>
-        <h3>43 premium sounds</h3>
-        <p>Farts, memes, dramatic, sassy & more. New packs added monthly.</p>
+    <p>Every iPhone makes the <span class="highlight">same boring "ding"</span> when you plug in. Yours doesn't have to.</p>
+  </div>
+</section>
+
+<!-- VALUE STACK: Hormozi's $100M Offers framework -->
+<section class="value">
+  <div class="container">
+    <h2>Here's what you're getting</h2>
+    <p class="value-sub">Everything included. No hidden fees. No subscriptions needed.</p>
+    <div class="value-stack">
+      <div class="value-row value-row-hero">
+        <span class="v-emoji">💎</span>
+        <div class="v-text">
+          <h3>85+ Premium Sounds</h3>
+          <p>Farts, animals, retro, sassy, dramatic, movie vibes & 10 categories of audio gold</p>
+        </div>
+        <span class="v-price">$25</span>
       </div>
-      <div class="feature">
-        <div class="feature-emoji">⚡</div>
-        <h3>30-second setup</h3>
-        <p>One-time iOS Shortcuts automation. Set it and forget it.</p>
+      <div class="value-row value-row-hero">
+        <span class="v-emoji">🎧</span>
+        <div class="v-text">
+          <h3>Import Your Own Audio</h3>
+          <p>Voice memo, TikTok audio, a sound your kid made &mdash; anything goes</p>
+        </div>
+        <span class="v-price">$15</span>
       </div>
-      <div class="feature">
-        <div class="feature-emoji">🎤</div>
-        <h3>Import your own</h3>
-        <p>Drop in any audio file and make it your charger sound.</p>
+      <div class="value-row value-row-hero">
+        <span class="v-emoji">🔀</span>
+        <div class="v-text">
+          <h3>Shuffle Mode</h3>
+          <p>Pick your favorites, get a different surprise every time you plug in</p>
+        </div>
+        <span class="v-price">$10</span>
       </div>
-      <div class="feature">
-        <div class="feature-emoji">🔒</div>
-        <h3>Zero tracking</h3>
-        <p>No accounts, no analytics, no ads. Your phone, your joke.</p>
+      <div class="value-row">
+        <span class="v-emoji">🔇</span>
+        <div class="v-text">
+          <h3>Silent Mode Override</h3>
+          <p>Plays even when your phone is muted</p>
+        </div>
+        <span class="v-price">$10</span>
+      </div>
+      <div class="value-row">
+        <span class="v-emoji">🗓️</span>
+        <div class="v-text">
+          <h3>New Sounds Monthly</h3>
+          <p>Fresh packs added regularly, yours to keep</p>
+        </div>
+        <span class="v-price">$15</span>
+      </div>
+      <div class="value-row">
+        <span class="v-emoji">🚫</span>
+        <div class="v-text">
+          <h3>No Ads, No Tracking</h3>
+          <p>No accounts, no analytics. Your phone, your joke.</p>
+        </div>
+        <span class="v-price">Free</span>
+      </div>
+    </div>
+    <div class="value-total">
+      <div class="total-line">Total value: $75+</div>
+      <div class="pricing-tiers">
+        <div class="tier tier-main">
+          <div class="tier-price">$49.99</div>
+          <div class="tier-label">Lifetime</div>
+          <div class="tier-detail">Pay once, yours forever</div>
+        </div>
+        <div class="tier">
+          <div class="tier-price">$19.99<span class="tier-unit">/yr</span></div>
+          <div class="tier-label">Yearly</div>
+          <div class="tier-detail">Just $1.67/mo</div>
+        </div>
+        <div class="tier tier-muted">
+          <div class="tier-price">$9.99<span class="tier-unit">/mo</span></div>
+          <div class="tier-label">Monthly</div>
+          <div class="tier-detail">Try it out</div>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<footer class="footer" id="download">
+<!-- HOW IT WORKS: Minimize Time Delay + Effort -->
+<section class="how">
+  <div class="container">
+    <h2>Free to try, ready in 15 seconds</h2>
+    <div class="steps">
+      <div class="step">
+        <h3>Pick a sound</h3>
+        <p>Browse 85+ sounds, pick a favorite &mdash; or turn on shuffle for a surprise every time.</p>
+      </div>
+      <div class="step">
+        <h3>Quick guided setup</h3>
+        <p>The app walks you through it. One-time, takes seconds.</p>
+      </div>
+      <div class="step">
+        <h3>Plug in & laugh</h3>
+        <p>Every time you charge, your sound plays automatically. Forever.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES: Perceived Likelihood -->
+<section class="features" id="features">
+  <div class="container">
+    <h2>Built for the details</h2>
+    <div class="feature-grid">
+      <div class="feature">
+        <div class="feature-emoji">⚡</div>
+        <h3>Works instantly</h3>
+        <p>Plays the moment your charger connects. No delay, no lag.</p>
+      </div>
+      <div class="feature">
+        <div class="feature-emoji">🎯</div>
+        <h3>In-app setup guide</h3>
+        <p>Step-by-step walkthrough with a floating overlay. You can't get lost.</p>
+      </div>
+      <div class="feature">
+        <div class="feature-emoji">🎤</div>
+        <h3>Import anything</h3>
+        <p>Record yourself, use a voice memo, or drop in any audio file.</p>
+      </div>
+      <div class="feature">
+        <div class="feature-emoji">🌙</div>
+        <h3>Dark mode</h3>
+        <p>Looks great day and night. Follows your system setting.</p>
+      </div>
+      <div class="feature">
+        <div class="feature-emoji">🔋</div>
+        <h3>Zero battery drain</h3>
+        <p>No background processes. The iOS Shortcut handles everything.</p>
+      </div>
+      <div class="feature">
+        <div class="feature-emoji">📱</div>
+        <h3>Lightweight</h3>
+        <p>Small app, fast launch. No bloat, no loading screens.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA: Risk Reversal -->
+<section class="final-cta">
+  <div class="container">
+    <h2>Try it free.<br>Keep it forever.</h2>
+    <p>Free sounds included. Upgrade once to unlock everything &mdash; no subscriptions.</p>
+    <a href="https://apps.apple.com/app/id6761666897"><img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83" alt="Download on the App Store" class="store-badge"></a>
+    <p class="guarantee">Apple-backed refund guarantee &mdash; not for you? Full refund through the App Store, no questions.</p>
+  </div>
+</section>
+
+<footer class="footer">
   <div class="container">
     <div class="footer-links">
       <a href="/support">Support</a>
       <a href="/privacy">Privacy</a>
       <a href="/terms">Terms</a>
     </div>
-    <p>© 2026 Vocalcord – <a href="https://wayf.ai" target="_blank" rel="noopener">WAYF</a></p>
+    <p>&copy; 2026 Vocalcord &ndash; <a href="https://wayf.ai" target="_blank" rel="noopener">WAYF</a></p>
   </div>
 </footer>
 
